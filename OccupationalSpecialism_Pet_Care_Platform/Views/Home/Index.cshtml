@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="titleBar">
+    <cleanText class="titleText">PetPal Pet Care Services</cleanText>
+</div>
+<div class="d-flex flex-row">
+    <div class="loginMenu">
+        <div class="loginMenuInner">
+            <h1>Welcome!</h1>
+            <div class="line"></div>
+            <div class="signInBox">
+                <div style="margin-right:5%;" class="d-flex flex-column flexbox2">
+                    <span class="boldBigText">Have an account?</span>
+                    <span class="mediumText">Sign-in here!</span>
+                    <a asp-area="Identity" asp-page="/Account/Login" class="linkButton boldSmallText"><span class="centerText">Log in</span></a>
+                </div>
+                <div style="margin-left:5%;" class="d-flex flex-column flexbox2">
+                    <span class="boldBigText">Are you new here?</span>
+                    <span class="mediumText">Register Today</span>
+                    <a asp-area="Identity" asp-page="/Account/Register" class="linkButton boldSmallText"><span class="centerText">Register</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="gradient"></div>
+    <img style="width:50%" src="/img/jpg/dog-with-family.jpg"/>
+</div>

@@ -1,0 +1,44 @@
+﻿.dashboardOuter {
+    width:100%;
+}
+
+.dashboardInner {
+    margin:20px;
+    margin-top:0px;
+}
+
+.welcomeText {
+    font-size: 60px;
+    font-family: Rubik;
+    font-weight:bold;
+}
+
+.dashboardApp {
+    display:flex;
+    flex-direction:column;
+    height: 300px;
+    width: 300px;
+    box-shadow: 0 2px 5px rgba(0,0,0, .2);
+    border-radius:5px;
+}
+
+.cleanLink {
+    text-decoration:none;
+    color:black;
+}
+
+.cleanLink:hover {
+    text-decoration: none;
+    color: black;
+}
+
+.dashboardAppTitle {
+    width: 100%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    height: 15%;
+    background: lightgrey;
+    font-size:25px;
+    font-family:Rubik;
+    font-weight:bold;
+}

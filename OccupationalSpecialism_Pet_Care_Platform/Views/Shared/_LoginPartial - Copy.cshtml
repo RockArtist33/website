@@ -1,0 +1,33 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+<ul class="navbar-nav">
+    <li class="nav-item">
+        <svg style="width:40px;height:40px;" viewBox="133.814 24.665 160 160" xmlns="http://www.w3.org/2000/svg">
+            <ellipse style="fill: rgb(235, 235, 235); stroke: rgb(0, 0, 0); stroke-width: 2px;" cx="213.814" cy="104.665" rx="80" ry="80" transform="matrix(1, 0, 0, 1, 0, 7.105427357601002e-15)" />
+            <ellipse style="fill: rgb(255, 255, 255); stroke: rgb(0, 0, 0); stroke-width: 2px;" cx="214.571" cy="77.073" rx="23.275" ry="23.275" transform="matrix(1, 0, 0, 1, 0, 7.105427357601002e-15)" />
+            <path style="fill: rgb(255, 255, 255); stroke: rgb(0, 0, 0); stroke-width: 2px;" d="M 148.784 150.22 C 148.784 150.22 154.825 100.387 213.068 100.173 C 271.312 99.959 279.509 149.201 279.509 149.201 C 279.509 149.201 259.88 181.997 215.657 183.488 C 171.434 184.981 149.001 150.481 148.784 150.22 Z" transform="matrix(1, 0, 0, 1, 0, 7.105427357601002e-15)" />
+        </svg>
+    </li>
+@if (SignInManager.IsSignedIn(User))
+{
+    <li class="nav-item">
+        <a  class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity?.Name!</a>
+    </li>
+    <li class="nav-item">
+        <form  class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+            <button  type="submit" class="nav-link btn btn-link text-dark">Logout</button>
+        </form>
+    </li>
+}
+else
+{
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">Register</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Login</a>
+    </li>
+}
+</ul>

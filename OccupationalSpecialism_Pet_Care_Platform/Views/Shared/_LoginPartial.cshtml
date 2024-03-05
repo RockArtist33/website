@@ -1,0 +1,41 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+
+@if (SignInManager.IsSignedIn(User))
+{
+    <li class="nav-item">
+        <img id="navbarprofile" onclick="hideDropdown(this.id)" style="width:40px;height:40px;" src="~/img/svg/DefaultProfilePicture.svg" />
+    </li>
+
+    <div id="navbarprofiledropdown" class="AccountDropDownOuter hide">
+        <div id="innerprofile" class="AccountDropDownInner hide">
+            <div class="d-flex flex-row profileBox">
+                <img class="profileIcon" src="/img/svg/DefaultProfilePicture.svg" />
+                <cleanText class="profileName" style="margin:auto">@User.Identity?.Name</cleanText>
+            </div>
+            <a class="profileButton  d-flex flex-row" asp-area="Identity" asp-page="/Account/Manage/Index">
+                <img style="margin:auto;margin-left:20px;width:32px;height:32px;" src="/img/svg/ProfileEdit.svg">
+                <cleanText class="profileText">Profile</cleanText>
+            </a>
+            <a class="profileButton d-flex flex-row" asp-area="Identity" asp-page="/Account/Manage/Index">
+                <img style="margin:auto;margin-left:20px;width:32px;height:32px;" src="/img/svg/cogwheel.svg">
+                <cleanText class="profileText">Settings</cleanText>
+            </a>
+            <a class="profileButton d-flex flex-row" asp-area="Identity" asp-page="/Account/Logout">
+                <img style="margin:auto;margin-left:25px;width:32px;height:32px;" src="/img/svg/Exit.svg">
+                <cleanText style="margin-left:25px;" class="profileText">Log Out</cleanText>
+            </a>
+
+        </div>
+    </div>
+}
+else
+{
+    <a asp-area="Identity" asp-page="/Account/Login" class="nav-item">
+        <img id="navbarprofile" onclick="hideDropdown(this.id)" style="width:40px;height:40px;" src="~/img/svg/DefaultProfilePicture.svg" />
+    </a>
+}
+
+

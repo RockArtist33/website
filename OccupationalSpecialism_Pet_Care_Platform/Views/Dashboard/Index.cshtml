@@ -1,0 +1,20 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+@{
+}
+<link rel="stylesheet" href="~/css/dashboard.css" />
+<div class="dashboardOuter">
+    <div class="dashboardInner">
+        <span class="welcomeText">Welcome back @User.Identity?.Name!</span>
+        <div style="width:36%; margin-bottom:25px;" class="line"></div>
+        <div class="dashboardApps">
+            <a href="~/Pets" class="cleanLink dashboardApp">
+                <span class="dashboardAppTitle">My Pets</span>
+                <span class="dashboardAppDescription">See all of your pets in one place!</span>
+            </a>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\OccupationalSpecialism_Pet_Care_Platform.props" />
+</Project>
